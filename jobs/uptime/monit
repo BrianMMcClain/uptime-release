@@ -1,0 +1,5 @@
+check process uptime
+  with pidfile /var/vcap/sys/run/uptime/uptime.pid
+  start program "/var/vcap/jobs/uptime/bin/monit_debugger uptime_ctl '/var/vcap/jobs/uptime/bin/uptime_ctl start'"
+  stop program "/var/vcap/jobs/uptime/bin/monit_debugger uptime_ctl '/var/vcap/jobs/uptime/bin/uptime_ctl stop'"
+  group vcap
