@@ -1,9 +1,1 @@
----
-node/node-v0.8.12.tar.gz:
-  object_id: 3304f23f-3065-40ad-98ff-8a8a3eca35f7
-  sha: 719397c7f65365b2ec6510863ac62bd291784910
-  size: 11855506
-uptime/uptime-v2.0rc0.tar.gz:
-  object_id: f037bf4c-5bb8-4bcf-9b53-160f77054cba
-  sha: 0490907d2f059481b1b10c23992e159eb8877afc
-  size: 144697
+--- {}
