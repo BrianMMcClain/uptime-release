@@ -1,5 +1,6 @@
----
-blobstore:
+--- 
+blobstore: 
   provider: local
-  options:
+  options: 
     blobstore_path: /tmp/blobstore
+min_cli_version: 1.0.rc1
