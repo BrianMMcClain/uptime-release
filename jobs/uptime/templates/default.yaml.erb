@@ -1,6 +1,6 @@
 mongodb:
-  server:   <%= properties.uptime.mongodb.address || '127.0.0.1' %>
-  database: uptime
+  server:   <%= properties.uptime.mongodb.server || '127.0.0.1' %>
+  database: <%= properties.uptime.mongodb.database || 'uptime' %>
   user:     root 
   password:
   connectionString:       # alternative to setting server, database, user and password separately
@@ -20,6 +20,6 @@ analyzer:
 autoStartMonitor: true
 
 server:
-  port:     8082
+  port:     <%= properties.uptime.port || 8082 %>
 
 verbose: true # only used in dev
