@@ -1,0 +1,25 @@
+mongodb:
+  server:   <%= properties.uptime.mongodb.address || '127.0.0.1' %>
+  database: uptime
+  user:     root 
+  password:
+  connectionString:       # alternative to setting server, database, user and password separately
+
+monitor:
+  name:                   origin
+  apiUrl:                 'http://localhost:8082/api'
+  pollingInterval:        10000      # ten seconds
+  timeout:                5000       # five seconds
+  userAgent:              NodeUptime/2.0 (https://github.com/fzaninotto/uptime)
+
+analyzer:
+  updateInterval:         60000      # one minute
+  qosAggregationInterval: 600000     # ten minutes
+  pingHistory:            8035200000 # three months
+
+autoStartMonitor: true
+
+server:
+  port:     8082
+
+verbose: true # only used in dev

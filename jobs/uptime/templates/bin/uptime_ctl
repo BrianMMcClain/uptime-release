@@ -17,7 +17,6 @@ case $1 in
 
     # TODO: Run some process
 	export NODE_CONFIG_DIR=/var/vcap/packages/uptime/config
-    export NODE_ENV=production
     /var/vcap/packages/node/bin/node /var/vcap/packages/uptime/app.js >>$LOG_DIR/$JOB_NAME.stdout.log 2>>$LOG_DIR/$JOB_NAME.stderr.log        
 
     # store pid in $PIDFILE
