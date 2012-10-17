@@ -7,7 +7,7 @@ mongodb:
 
 monitor:
   name:                   origin
-  apiUrl:                 'http://localhost:8082/api'
+  apiUrl:                 'http://<%= properties.uptime.mongodb.server || '127.0.0.1' %>:<%= properties.uptime.port || 8082 %>/api'
   pollingInterval:        10000      # ten seconds
   timeout:                5000       # five seconds
   userAgent:              NodeUptime/2.0 (https://github.com/fzaninotto/uptime)
