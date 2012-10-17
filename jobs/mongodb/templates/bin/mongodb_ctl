@@ -14,18 +14,8 @@ case $1 in
   start)
     pid_guard $PIDFILE $JOB_NAME
 
-    /var/vcap/packages/mongodb/bin/mongod --dbpath /var/vcap/data >>$LOG_DIR/$JOB_NAME.stdout.log 2>>$LOG_DIR/$JOB_NAME.stderr.log &
-	PID = $!
-	
-	# Wait for Mongo to pre-allocate journal files
-	while :
-	do
-		if grep -q "waiting for connections" $LOG_DIR/$JOB_NAME.stdout.log; then
-			echo $PID > $PIDFILE
-			break
-		fi
-	done
-	
+    /var/vcap/packages/mongodb/bin/mongod --nojournal --dbpath /var/vcap/data >>$LOG_DIR/$JOB_NAME.stdout.log 2>>$LOG_DIR/$JOB_NAME.stderr.log &
+	echo $! > $PIDFILE
     
     ;;
 
